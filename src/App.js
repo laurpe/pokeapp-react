@@ -1,5 +1,11 @@
+import Layout from "./pages/Layout";
+
 const App = () => {
-    return <div>hello pokeapp</div>;
+    return (
+        <div>
+            <Layout />
+        </div>
+    );
 };
 
 export default App;
