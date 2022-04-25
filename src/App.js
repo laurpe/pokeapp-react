@@ -1,9 +1,12 @@
 import Layout from "./pages/Layout";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
     return (
         <div>
-            <Layout />
+            <BrowserRouter>
+                <Layout />
+            </BrowserRouter>
         </div>
     );
 };
