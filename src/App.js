@@ -1,5 +1,5 @@
-function App() {
+const App = () => {
     return <div>hello pokeapp</div>;
-}
+};
 
 export default App;
