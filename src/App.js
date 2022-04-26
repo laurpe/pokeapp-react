@@ -3,7 +3,7 @@ import Home from "./components/Home";
 import FavList from "./components/FavList";
 import PokeList from "./components/PokeList";
 import About from "./components/About";
-import PokeCard from "./components/PokeCard";
+import PokeSingle from "./components/PokeSingle";
 import Layout from "./pages/Layout";
 
 const App = () => {
@@ -14,7 +14,10 @@ const App = () => {
                     <Route path="/" element={<Layout />}>
                         <Route path="/" element={<Home />} />
                         <Route path="pokelist" element={<PokeList />} />
-                        <Route path="pokelist/pokemon" element={<PokeCard />} />
+                        <Route
+                            path="pokelist/:pokemon"
+                            element={<PokeSingle />}
+                        />
                         <Route path="favlist" element={<FavList />} />
                         <Route path="about" element={<About />} />
                     </Route>
