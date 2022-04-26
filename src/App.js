@@ -13,9 +13,8 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route path="/" element={<Home />} />
-                        <Route path="pokelist" element={<PokeList />}>
-                            <Route path="pokemon" element={<PokeCard />} />
-                        </Route>
+                        <Route path="pokelist" element={<PokeList />} />
+                        <Route path="pokelist/pokemon" element={<PokeCard />} />
                         <Route path="favlist" element={<FavList />} />
                         <Route path="about" element={<About />} />
                     </Route>
