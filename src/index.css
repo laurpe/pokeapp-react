@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary: rgb(141, 106, 201);
+}
+
 body {
     font-family: "Open Sans", sans-serif;
 }
@@ -31,15 +35,19 @@ header {
 
 main {
     min-height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer {
     height: 100px;
-    background-color: rgb(141, 106, 201);
+    background-color: var(--primary);
 }
 
 nav ul li a:link {
     color: white;
+    text-decoration: none;
 }
 
 nav ul li a:hover {
@@ -52,4 +60,58 @@ nav ul li a:visited {
 
 nav ul li a:active {
     color: white;
+}
+
+.pokecards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.pokecard {
+    box-shadow: 2px 3px 5px 1px rgb(225, 225, 225);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.pokecard h2 {
+    color: var(--primary);
+}
+
+.pokecard img {
+    max-width: 80%;
+    height: 60%;
+}
+
+.pokeSingle img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.pokeContainer {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(215, 255, 242);
+    width: 100%;
+    height: 100%;
+    margin: 30px 0;
+}
+
+.pokeSingle {
+    text-align: center;
+    padding: 50px;
+}
+
+@media (min-width: 650px) {
+    .pokeContainer {
+        border-radius: 50%;
+        width: 600px;
+        height: 600px;
+        padding: 30px;
+    }
 }

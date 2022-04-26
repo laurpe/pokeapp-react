@@ -7,7 +7,7 @@ class Pokelist extends Component {
     };
 
     componentDidMount() {
-        fetch("https://pokeapi.co/api/v2/pokemon")
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=100")
             .then((response) => response.json())
             .then((data) => {
                 const fetches = data.results.map((item) => {
@@ -22,10 +22,10 @@ class Pokelist extends Component {
 
     render() {
         return (
-            <div>
+            <>
                 {!this.state.data && <div>loading...</div>}
                 {this.state.data && (
-                    <div>
+                    <div className="pokecards">
                         {this.state.data.map((pokemon) => {
                             return (
                                 <PokeCard key={pokemon.id} pokemon={pokemon} />
@@ -33,7 +33,7 @@ class Pokelist extends Component {
                         })}
                     </div>
                 )}
-            </div>
+            </>
         );
     }
 }

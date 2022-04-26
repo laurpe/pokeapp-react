@@ -5,6 +5,12 @@ import PokeList from "./components/PokeList";
 import About from "./components/About";
 import PokeSingle from "./components/PokeSingle";
 import Layout from "./pages/Layout";
+import { useParams } from "react-router-dom";
+
+const RouteWrapper = (props) => {
+    const params = useParams();
+    return <PokeSingle params={params} {...props} />;
+};
 
 const App = () => {
     return (
@@ -16,7 +22,7 @@ const App = () => {
                         <Route path="pokelist" element={<PokeList />} />
                         <Route
                             path="pokelist/:pokemon"
-                            element={<PokeSingle />}
+                            element={<RouteWrapper />}
                         />
                         <Route path="favlist" element={<FavList />} />
                         <Route path="about" element={<About />} />
